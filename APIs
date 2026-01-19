@@ -1,0 +1,12 @@
+import requests
+import json
+
+def apicall():
+    parameters = {"limit":1}
+    response = requests.get("https://fakestoreapi.com/products", params=parameters)
+    response1 = response.json()
+    response2 = json.dumps(response1, indent=2)
+    print(response2)
+
+
+apicall()
