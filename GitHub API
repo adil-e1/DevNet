@@ -1,6 +1,11 @@
 import requests
 import json
+import os
 
-repo = requests.get("https://github.com/adil-e1/DevNet/")
 
-print(repo.json())
+token = os.getenv("GITHUB TOKEN")
+headers = {"Authorization": f"Bearer {token}"}
+
+repo = requests.get("https://api.github.com/user/repos", headers=headers)
+
+print(json.dumps(repo.json(), indent=2))
