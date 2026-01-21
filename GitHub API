@@ -1,0 +1,6 @@
+import requests
+import json
+
+repo = requests.get("https://github.com/adil-e1/DevNet/")
+
+print(repo.json())

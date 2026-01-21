@@ -1,0 +1,11 @@
+import requests
+import json
+
+def apicall():
+    response = requests.get("https://postman-echo.com/basic-auth", auth=("postman", "password"))
+    response1 = response.json()
+    response2 = json.dumps(response1, indent=2)
+    print(response2)
+
+
+apicall()
